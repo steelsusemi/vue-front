@@ -1,26 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <Header />
+    <router-link to="/">홈페이지</router-link>
+    <router-link to="/list">리스트페이지</router-link>
+    <router-view :apple="apple"/>
+    <Footer />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Header from './components/fragments/header';
+import Footer from './components/fragments/footer';
+// import appleProduct from './assets/appleProduct.js';
 export default {
   name: 'App',
+  data(){
+    return {
+      // apple : appleProduct
+    }
+  },
   components: {
-    HelloWorld
+    Header,
+    Footer,
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
